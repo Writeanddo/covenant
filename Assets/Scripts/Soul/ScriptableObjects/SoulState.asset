@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a738d9d5a4e2a0478d2beb77181c5f1, type: 3}
   m_Name: SoulState
   m_EditorClassIdentifier: 
+  soulBodyType: 0
+  soulBodyPlanet: 4
   soulName: Teste
-  soulBody: 0
-  soulPlanet: 1
-  soulElement: 1
-  soulTitle: 1
+  soulPaperTypeFace: 0
+  soulPaperElement: 3
+  soulPaperPlanet: 5
+  soulTitle: 0
+  hasSeal: 0

@@ -1,20 +1,15 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
+using UnityEngine;
 
-namespace RE
+namespace RE.Soul
 {
     [CreateAssetMenu(fileName = "SoulDictionary", menuName = "States/SoulDictionary")][Serializable]
     public class SoulDictionary : ScriptableObject
     {
-        [Header("Body")]
-        public SoulTypeDictionary soulBodyDictionary;
-        public SoulElementAuraDictionary soulAuraDictionary;
+        public SoulTypeDictionary soulTypeDictionary;
         public SoulPlanetDictionary soulPlanetDictionary;
-        [Header("Paper")]
         public SoulTitleDictionary soulTitleDictionary;
-        public SoulTypeFaceDictionary soulFaceDictionary;
         public SoulElementDictionary soulElementDictionary;
-        public SoulPlanetPaperDictionary soulPlanetPaperDictionary;
 
     }
     

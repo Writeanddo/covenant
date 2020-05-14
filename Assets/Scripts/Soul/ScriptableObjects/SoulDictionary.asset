@@ -12,24 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0935c07458ffc4bbd3b6aaaf1ee216, type: 3}
   m_Name: SoulDictionary
   m_EditorClassIdentifier: 
-  soulBodyDictionary:
-    _keys: 
-    _values: []
-  soulAuraDictionary:
-    _keys: 
-    _values: []
+  soulTypeDictionary:
+    _keys: 00000000
+    _values:
+    - _sprite: {fileID: -5968165319010354009, guid: 393163ecd7cc0b4499bd09915b31919f,
+        type: 3}
+      _gameObject: {fileID: 5853607304867546633, guid: d5f7c78d6e6851c4d888657f69f8bc02,
+        type: 3}
   soulPlanetDictionary:
-    _keys: 
-    _values: []
+    _keys: 00000000010000000200000004000000060000000500000003000000
+    _values:
+    - _sprite: {fileID: -7969909728831317859, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: -5048305614486487270, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: 6542205692387176553, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: 31964767887695495, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: -8268541130945840638, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: -4096412085795113499, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: 442771260852349703, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
   soulTitleDictionary:
-    _keys: 
-    _values: []
+    _keys: 020000000100000000000000
+    _values:
+    - _sprite: {fileID: 7423711640626229801, guid: 9d4614ff861a03d408c789d99a2cbc11,
+        type: 3}
+    - _sprite: {fileID: -8135338758239342235, guid: 9d4614ff861a03d408c789d99a2cbc11,
+        type: 3}
+    - _sprite: {fileID: 5921082514122777518, guid: 9d4614ff861a03d408c789d99a2cbc11,
+        type: 3}
   soulElementDictionary:
-    _keys: 
-    _values: []
-  soulPlanetPaperDictionary:
-    _keys: 
-    _values: []
-  soulFaceDictionary:
-    _keys: 
-    _values: []
+    _keys: 03000000010000000200000000000000
+    _values:
+    - _sprite: {fileID: 6151459299053561112, guid: 21b292c8f5d91ae4492e19eb3750751a,
+        type: 3}
+      _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
+        type: 3}

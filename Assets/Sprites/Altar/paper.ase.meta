@@ -30,6 +30,9 @@ ScriptedImporter:
   - animationName: sign
     loopTime: 1
     about: "Animation Type:\tForward\r\nAnimation:\tFrom: 9; To: 18"
+  - animationName: idle
+    loopTime: 1
+    about: "Animation Type:\tForward\r\nAnimation:\tFrom: 0; To: 0"
   atlas: {instanceID: 0}
   importType: 0
   bindType: 0

@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
+using UnityEngine;
 
-namespace RE
+namespace RE.Soul
 {
     [CreateAssetMenu(fileName = "SoulState", menuName = "States/SoulState")][Serializable]
     public class SoulState : ScriptableObject

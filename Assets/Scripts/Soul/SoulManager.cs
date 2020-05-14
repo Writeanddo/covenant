@@ -1,15 +1,21 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-using System;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-namespace RE
+namespace RE.Soul
 {
     public class SoulManager : MonoBehaviour
     {
-        [SerializeField] SoulDictionary _soulDictionary;
         [SerializeField] List<SoulState> _souls;
+        [SerializeField] Transform[] _waypoints;
+        [SerializeField] Queue<GameObject> _soulQueue = new Queue<GameObject>();
 
+        private SoulSpawner _soulSpawner;
         private int _soulIndex = 0;
+
+        private void Awake()
+        {
+            _soulSpawner = GetComponent<SoulSpawner>();
+        }
 
         private void Update()
         {
@@ -17,16 +23,18 @@ namespace RE
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log(_souls[_soulIndex].name);
-                InstantiateSoul();
+                SetSoulProps();
             }
         }
 
-        private void InstantiateSoul()
+        private void SetSoulProps()
         {
             SoulState soulState = _souls[_soulIndex];
-            //GameObject soulBody = _soulDictionary.soulBodyDictionary[soulState.soulBody];
-
-            //GameObject soul = Instantiate(soulBody, transform.position, Quaternion.identity);
+            Transform waypoint = _waypoints[_soulIndex];
+            GameObject soul = _soulSpawner.SpawnSoul(soulState, waypoint);
+            _soulQueue.Enqueue(soul);
+            Debug.Log(_soulQueue.Count);
         }
+
     }
 }
