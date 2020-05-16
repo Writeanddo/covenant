@@ -7,13 +7,13 @@ namespace RE.Soul
 {
     public class SoulManager : MonoBehaviour
     {
-        [SerializeField] SoulChecker _soulChecker;
         [SerializeField] List<SoulState> _souls;
         [SerializeField] Transform[] _waypoints;
         [SerializeField] Transform _portalWaypoint;
         [SerializeField] Queue<ISoul> _soulQueue = new Queue<ISoul>();
         [SerializeField] int _queueLimit;
 
+        private SoulCheck _soulCheck;
         private CandleLight _candleLight;
         private Pen _pen;
 
@@ -25,10 +25,11 @@ namespace RE.Soul
 
         private void Awake()
         {
+            _soulCheck = GetComponent<SoulCheck>();
             _candleLight = FindObjectOfType<CandleLight>();
-            _candleLight.Interacted += PaperBurn;
+            _candleLight.Interacted += Burn;
             _pen = FindObjectOfType<Pen>();
-            _pen.Interacted += PaperSign;
+            _pen.Interacted += Sign;
             _soulSpawner = GetComponent<SoulSpawner>();
         }
 
@@ -46,15 +47,6 @@ namespace RE.Soul
                 EnqueueSoul();
                 if (_queueLimit - 1 == i)
                     _soulSpawner.SpawnPaper(_actualSoulState);
-            }
-        }
-
-        private void Update()
-        {
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                EnqueueSoul();
             }
         }
 
@@ -79,21 +71,21 @@ namespace RE.Soul
             _actualSoulState = _souls[r];
         }
 
-        private void PaperSign()
+        private void Sign()
         {
-            RemoveSoul();
+            RemoveSoul(true);
         }
 
-        private void PaperBurn()
+        private void Burn()
         {
-            RemoveSoul();
+            RemoveSoul(false);
         }
 
-        private void RemoveSoul()
+        private void RemoveSoul(bool sign)
         {
             ISoul soulBody = _soulQueue.Dequeue();
             Destroy(soulBody.SoulGameObject);
-            _soulChecker.ItemsToCheck(soulBody.SoulState);
+            _soulCheck.ItemsToCheck(soulBody.SoulState, sign);
 
             MoveAndAddSoul();
         }
@@ -114,7 +106,7 @@ namespace RE.Soul
 
         private IEnumerator Co_InstantiatePaper()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.2f);
             _soulSpawner.SpawnPaper(_soulQueue.Peek().SoulState);
         }
 
