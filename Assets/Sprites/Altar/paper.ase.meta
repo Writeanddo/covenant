@@ -29,7 +29,7 @@ ScriptedImporter:
     about: "Animation Type:\tForward\r\nAnimation:\tFrom: 1; To: 8"
   - animationName: sign
     loopTime: 1
-    about: "Animation Type:\tForward\r\nAnimation:\tFrom: 9; To: 18"
+    about: "Animation Type:\tForward\r\nAnimation:\tFrom: 9; To: 22"
   - animationName: idle
     loopTime: 1
     about: "Animation Type:\tForward\r\nAnimation:\tFrom: 0; To: 0"

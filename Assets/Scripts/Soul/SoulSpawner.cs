@@ -23,8 +23,6 @@ namespace RE.Soul
 
         private string PapertName { get; set; }
 
-
-
         public GameObject SpawnSoul(SoulState soulState, Transform waypoint)
         {
             SoulState = soulState;
@@ -37,14 +35,28 @@ namespace RE.Soul
             return InstantiateSoul();
         }
 
+        public GameObject SpawnPaper(SoulState soulState)
+        {
+            SoulState = soulState;
+            var soulProps = Enum.GetValues(typeof(SoulProp)).Cast<SoulProp>();
+            foreach (var prop in soulProps)
+            {
+                SetSoulProps(prop);
+            }
+            return InstantiatePaper();
+        }
+
         private GameObject InstantiateSoul()
         {
-            Waypoint = transform;
-
             var body = Instantiate(BodyType, Waypoint.position, Quaternion.identity);
             Instantiate(BodyAura, Waypoint.position, Quaternion.identity, body.transform);
             body.transform.Find("planet").GetComponent<SpriteRenderer>().sprite = BodyPlanet;
 
+            return body;
+        }
+
+        private GameObject InstantiatePaper()
+        {
             var paper = Instantiate(_paperPrefab, _waypointPaper.position, Quaternion.identity);
             paper.transform.Find("name").GetComponent<TextMeshPro>().text = PapertName;
             paper.transform.Find("element").GetComponent<SpriteRenderer>().sprite = PaperElement;
@@ -52,7 +64,7 @@ namespace RE.Soul
             paper.transform.Find("title").GetComponent<SpriteRenderer>().sprite = PaperTitle;
             paper.transform.Find("typeface").GetComponent<SpriteRenderer>().sprite = PaperTypeFace;
 
-            return body;
+            return paper;
         }
 
         private void SetSoulProps(SoulProp soulProp)

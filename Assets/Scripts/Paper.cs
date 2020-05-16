@@ -81,7 +81,7 @@ namespace RE
         private IEnumerator Co_PaperSign()
         {
             _animator.SetTrigger("setSign");
-            yield return new WaitForSeconds(.4f);
+            yield return new WaitForSeconds(1f);
             StartCoroutine(Co_DestroyPaper());
         }
 

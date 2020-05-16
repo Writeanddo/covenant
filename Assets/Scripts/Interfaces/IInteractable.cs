@@ -1,6 +1,10 @@
 ﻿using System;
-public interface IInteractable
+
+namespace RE
 {
-    event Action Interacted;
-    void Interact();
+    public interface IInteractable
+    {
+        event Action Interacted;
+        void Interact();
+    }
 }
