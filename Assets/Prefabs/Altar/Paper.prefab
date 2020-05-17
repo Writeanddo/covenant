@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1679148821}
   - component: {fileID: 1679148822}
   m_Layer: 0
-  m_Name: paper
+  m_Name: Paper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,9 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acb9ad43cdd3bb4fba536ffc3ff8b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xTransformMinPos: {fileID: 0}
-  xTransformMaxPos: {fileID: 0}
-  yTransformMaxPos: {fileID: 0}
+  _speed: 6
 --- !u!61 &1679148821
 BoxCollider2D:
   m_ObjectHideFlags: 0

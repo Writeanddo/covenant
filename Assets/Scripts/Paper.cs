@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace RE
 {
     public class Paper : MonoBehaviour
     {
+        [SerializeField] float _speed;
+        private Transform _paperWaypoint;
         private GameObject _tableLimits;
         private Animator _animator;
 
@@ -13,10 +16,13 @@ namespace RE
         private Pen _pen;
 
         private Vector2 _mousePos;
+        private float xLimitPos;
         private float xMinPos;
         private float xMaxPos;
         private float yMinPos;
         private float yMaxPos;
+
+        private bool miniPaper = true;
 
         private void Awake()
         {
@@ -26,12 +32,24 @@ namespace RE
             _candleLight.Interacted += PaperBurn;
             _pen = FindObjectOfType<Pen>();
             _pen.Interacted += PaperSign;
+            _paperWaypoint = GameObject.FindGameObjectWithTag("PaperWaypoint").transform;
             _tableLimits = GameObject.FindGameObjectWithTag("TableLimits");
         }
 
         private void Start()
         {
             SetXYPos();
+            StartCoroutine(Co_MoveToWaypoint());
+        }
+
+        private IEnumerator Co_MoveToWaypoint()
+        {
+            while (transform.position != _paperWaypoint.position)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, _paperWaypoint.position, _speed * Time.deltaTime);
+                yield return null;
+            }
+            yield return null;
         }
 
         private void SetXYPos()
@@ -46,15 +64,38 @@ namespace RE
                     xMaxPos = child.position.x;
                 if (child.name == "xMin")
                     xMinPos = child.position.x;
+                if (child.name == "xLimit")
+                    xLimitPos = child.position.x;
             }
         }
 
         private void OnMouseDrag()
         {
+            Debug.Log("Entrou???");
             Vector2 inputMousePos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             _mousePos.x = Mathf.Clamp(inputMousePos.x, xMinPos, xMaxPos);
             _mousePos.y = Mathf.Clamp(inputMousePos.y, yMinPos, yMaxPos);
             transform.position = new Vector2(_mousePos.x, _mousePos.y);
+            if (!miniPaper && transform.position.x < xLimitPos)
+            {
+                Debug.Log("ismini");
+                SetPaperAsMini(true);
+            }
+            else if (miniPaper && transform.position.x > xLimitPos)
+            {
+                Debug.Log("NOTNOTismini");
+                SetPaperAsMini(false);
+            }
+        }
+
+        private void SetPaperAsMini(bool isMini)
+        {
+            miniPaper = isMini;
+            _animator.SetBool("miniPaper", isMini);
+            /*foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(!isMini);
+            }*/
         }
 
         public void PaperBurn()
