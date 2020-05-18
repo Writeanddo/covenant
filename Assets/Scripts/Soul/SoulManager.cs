@@ -12,6 +12,7 @@ namespace RE.Soul
         [SerializeField] Transform _portalWaypoint;
         [SerializeField] Queue<ISoul> _soulQueue = new Queue<ISoul>();
         [SerializeField] int _queueLimit;
+        [SerializeField] GameObject _portalPrefab;
 
         private SoulCheck _soulCheck;
         private CandleLight _candleLight;
@@ -99,9 +100,9 @@ namespace RE.Soul
                 StartCoroutine(MoveToWaypoint(soul.SoulGameObject, index));
                 index++;
             }
+            StartCoroutine(Co_OpenPortal());
             StartCoroutine(Co_InstantiatePaper());
             StartCoroutine(Co_SpawnSoul());
-
         }
 
         private IEnumerator Co_InstantiatePaper()
@@ -112,6 +113,7 @@ namespace RE.Soul
 
         private IEnumerator Co_SpawnSoul()
         {
+            yield return new WaitForSeconds(0.2f);
             _actualWaypoint = _portalWaypoint;
             GetRandomSoul();
             ISoul soul = SetSoulProps();
@@ -131,6 +133,13 @@ namespace RE.Soul
                 soulT.position = Vector2.MoveTowards(soulT.position, _nextWaypoint.position, speed * Time.deltaTime);
                 yield return null;
             }
+        }
+
+        private IEnumerator Co_OpenPortal()
+        {
+            GameObject portal = Instantiate(_portalPrefab, new Vector2(_portalWaypoint.position.x, _portalWaypoint.position.y - 0.2f), Quaternion.identity);
+            yield return new WaitForSeconds(2.3f);
+            Destroy(portal);
         }
     }
 }
