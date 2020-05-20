@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace RE
@@ -9,6 +10,7 @@ namespace RE
         public event Action Interacted;
 
         private Animator _animator;
+        private bool _clickable = true;
 
         private void Awake()
         {
@@ -22,7 +24,8 @@ namespace RE
 
         private void OnMouseDown()
         {
-            Interact();
+            if (_clickable)
+                StartCoroutine(Co_Interact());
         }
 
         private void OnMouseOver()
@@ -38,6 +41,14 @@ namespace RE
         {
             IsSelected = false;
             _animator.SetBool("isSelected", false);
+        }
+
+        private IEnumerator Co_Interact()
+        {
+            _clickable = false;
+            Interact();
+            yield return new WaitForSeconds(1.3f);
+            _clickable = true;
         }
     }
 }

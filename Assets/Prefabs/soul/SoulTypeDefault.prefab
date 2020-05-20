@@ -1,5 +1,90 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &705506006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 705506007}
+  - component: {fileID: 705506008}
+  m_Layer: 0
+  m_Name: Freeform Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &705506007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705506006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5853607304867546677}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &705506008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705506006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.55
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.52
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.28375912, y: -0.32380366, z: 0}
+  - {x: -0.13541317, y: -0.61936593, z: 0}
+  - {x: -0.07935095, y: -0.9717586, z: 0}
+  - {x: 0.0648098, y: -1.2360532, z: 0}
+  - {x: 0.16091728, y: -0.8516247, z: 0}
+  - {x: 0.33982158, y: -0.40389276, z: 0}
+  - {x: 0.28105092, y: 0.26962543, z: 0}
+  - {x: 0.14489937, y: 0.6940987, z: 0}
+  - {x: 0.16892624, y: 1.0064471, z: 0}
+  - {x: 0.22498846, y: 1.0865366, z: 0}
+  - {x: 0.13158965, y: 1.1967771, z: 0}
+  - {x: -0.02328825, y: 1.1986616, z: 0}
+  - {x: -0.14342165, y: 1.0945451, z: 0}
+  - {x: -0.05532503, y: 0.70210767, z: 0}
+  - {x: -0.16744852, y: 0.58197427, z: 0}
+  - {x: -0.25973177, y: 0.41991067, z: 0}
+  - {x: -0.29559183, y: 0.11745572, z: 0}
 --- !u!1 &895382659
 GameObject:
   m_ObjectHideFlags: 0
@@ -17,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &895382660
 Transform:
   m_ObjectHideFlags: 0
@@ -115,7 +200,7 @@ GameObject:
   - component: {fileID: 5853607304867546679}
   - component: {fileID: 5853607304867546632}
   m_Layer: 0
-  m_Name: soul_type_default
+  m_Name: SoulTypeDefault
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,6 +219,7 @@ Transform:
   m_Children:
   - {fileID: 895382660}
   - {fileID: 8818114653165577670}
+  - {fileID: 705506007}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -151,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soulDictionary: {fileID: 0}
   _paperPrefab: {fileID: 0}
+  _waypointPaper: {fileID: 0}
 --- !u!212 &5853607304867546679
 SpriteRenderer:
   m_ObjectHideFlags: 0

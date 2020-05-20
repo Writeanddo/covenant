@@ -13,11 +13,31 @@ MonoBehaviour:
   m_Name: SoulDictionary
   m_EditorClassIdentifier: 
   soulTypeDictionary:
-    _keys: 00000000
+    _keys: 000000000100000002000000030000000400000005000000
     _values:
     - _sprite: {fileID: -5968165319010354009, guid: 393163ecd7cc0b4499bd09915b31919f,
         type: 3}
       _gameObject: {fileID: 5853607304867546633, guid: d5f7c78d6e6851c4d888657f69f8bc02,
+        type: 3}
+    - _sprite: {fileID: 4531577867857803509, guid: ebf6cf7a8f76e15458159fa96fe4579d,
+        type: 3}
+      _gameObject: {fileID: 9005203374789217585, guid: 245cc3e9b22d0a044a9342556eef0532,
+        type: 3}
+    - _sprite: {fileID: 3991347721593673858, guid: f100162bb9eb91145b070cdf84c26d72,
+        type: 3}
+      _gameObject: {fileID: 3895212407109883055, guid: 856aa4076390ee645982f2c58bc831f3,
+        type: 3}
+    - _sprite: {fileID: -6828355987936189373, guid: 662b8f7465f855246809278c310f8b58,
+        type: 3}
+      _gameObject: {fileID: 1493631096810584262, guid: 8f6c6d97df6f13543a8663fb4f0a4ad0,
+        type: 3}
+    - _sprite: {fileID: 4003276087069945553, guid: d9051b766510d0441a3deb0cfeccd4af,
+        type: 3}
+      _gameObject: {fileID: 8075314939622220937, guid: 0d5b649af5741c44b81c10e988062aab,
+        type: 3}
+    - _sprite: {fileID: -1264017714254301817, guid: 0b2e7cdef9b181f4c8bc5434de4e3801,
+        type: 3}
+      _gameObject: {fileID: 7000097500482784614, guid: 1816283f97196704fb96b4f08ed1b385,
         type: 3}
   soulPlanetDictionary:
     _keys: 00000000010000000200000004000000060000000500000003000000
@@ -48,6 +68,18 @@ MonoBehaviour:
   soulElementDictionary:
     _keys: 03000000010000000200000000000000
     _values:
+    - _sprite: {fileID: 6151459299053561112, guid: 21b292c8f5d91ae4492e19eb3750751a,
+        type: 3}
+      _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
+        type: 3}
+    - _sprite: {fileID: 6151459299053561112, guid: 21b292c8f5d91ae4492e19eb3750751a,
+        type: 3}
+      _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
+        type: 3}
+    - _sprite: {fileID: 6151459299053561112, guid: 21b292c8f5d91ae4492e19eb3750751a,
+        type: 3}
+      _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
+        type: 3}
     - _sprite: {fileID: 6151459299053561112, guid: 21b292c8f5d91ae4492e19eb3750751a,
         type: 3}
       _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,

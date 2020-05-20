@@ -13,7 +13,14 @@ namespace RE
         {
             get
             {
+                Debug.Log(key);
                 int index = _keys.IndexOf(key);
+                Debug.Log(_keys);
+                Debug.Log(index);
+                foreach (var item in _values)
+                {
+                    Debug.Log(item);
+                }
                 return _values[index];
             }
         }
@@ -49,7 +56,7 @@ namespace RE
 
     public enum SoulType
     {
-        Default
+        Default, Punk1, Punk2, Fat, Girl, Bald
     }
 
     [Serializable] public class SoulPlanetDictionary : SoulDictionary<SoulPlanet, SoulAttributeSprite> { }

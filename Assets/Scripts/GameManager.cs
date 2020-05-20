@@ -7,6 +7,7 @@ namespace RE
 {
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] Texture2D _arrow;
         [SerializeField] TextMeshPro _successTextStatus;
         [SerializeField] TextMeshPro _failTextStatus;
 
@@ -26,6 +27,7 @@ namespace RE
 
         private void Start()
         {
+            Cursor.SetCursor(_arrow, Vector2.zero, CursorMode.ForceSoftware);
             _successText.text = _successNumber.ToString();
             _failText.text = _failNumber.ToString();
         }
