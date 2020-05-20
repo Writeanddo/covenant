@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 namespace RE
@@ -60,6 +61,12 @@ namespace RE
             else
                 SetFail();
 
+        }
+
+        public void SetChangeScene()
+        {
+            Debug.Log("Scene Changed");
+            SceneManager.LoadScene("AltarScene");
         }
 
     }

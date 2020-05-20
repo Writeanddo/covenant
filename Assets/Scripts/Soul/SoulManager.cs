@@ -46,7 +46,7 @@ namespace RE.Soul
                 _actualWaypoint = _waypoints[i];
                 GetRandomSoul();
                 EnqueueSoul();
-                if (_queueLimit - 1 == i)
+                if (i  == 0)
                     _soulSpawner.SpawnPaper(_actualSoulState);
             }
         }
