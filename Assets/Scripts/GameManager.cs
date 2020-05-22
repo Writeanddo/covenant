@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 namespace RE
 {
@@ -17,13 +18,18 @@ namespace RE
         [SerializeField] TextMeshPro _successText;
         [SerializeField] TextMeshPro _failText;
         [SerializeField] Demon _demon;
+        [SerializeField] AltarCanvas _altarCanvas;
 
+        private MainCamera _mainCamera;
+
+        private Scene _actualScene;
         private int _successStatus = 0;
         private int _failStatus = 0;
 
         private void Awake()
         {
-
+            _mainCamera = FindObjectOfType<MainCamera>();
+            _actualScene = SceneManager.GetActiveScene();
         }
 
         private void Start()
@@ -33,25 +39,22 @@ namespace RE
             _failText.text = _failNumber.ToString();
         }
 
-        public void SetFail()
+        public void GameEnd() ///REFATORAR
         {
-            _failStatus++;
-            _failTextStatus.text = _failStatus.ToString();
-            _demon.SetStatus();
-
-            if(_failStatus >= _failNumber)
-                GameEnd();
+            _altarCanvas.gameObject.SetActive(true);
+            _altarCanvas.SetStatus(CheckSuccess(), SetText(_successStatus, _successNumber), SetText(_failStatus, _failNumber));
         }
 
-        public void SetSuccess()
-        {
-            _successStatus++;
-            _successTextStatus.text = _successStatus.ToString();
-        }
+        private string SetText(int status, int number) => status.ToString() + " / " + number.ToString();
 
-        public void GameEnd()
+        private bool CheckSuccess()
         {
-            Debug.Log("Acbou!!");
+            if (_failStatus >= _failNumber)
+                return false;
+            else if (_successStatus >= _successNumber)
+                return true;
+            return false;
+
         }
 
         public void SetScore(bool success)
@@ -63,11 +66,35 @@ namespace RE
 
         }
 
+        public void SetSuccess()
+        {
+            _successStatus++;
+            _successTextStatus.text = _successStatus.ToString();
+        }
+
+        public void SetFail()
+        {
+            _failStatus++;
+            _failTextStatus.text = _failStatus.ToString();
+            _demon.SetStatus();
+
+            _mainCamera.ChromaticPulse();
+            _mainCamera.ShakeCamera();
+
+            if (_failStatus >= _failNumber)
+                GameEnd();
+        }
+
         public void SetChangeScene()
         {
-            Debug.Log("Scene Changed");
-            SceneManager.LoadScene("AltarScene");
+            SceneManager.LoadScene(_actualScene.buildIndex + 1);
         }
+
+        public void ResetScene()
+        {
+            SceneManager.LoadScene(_actualScene.buildIndex);
+        }
+        
 
     }
 }

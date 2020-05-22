@@ -34,7 +34,7 @@ namespace RE
             _sceneTime -= Time.deltaTime;
             SetLevel();
 
-            if (_sceneTime > 0 && _showText)
+            if (_sceneTime > 0)
                 ShowText();
 
             if (_sceneTime <= 0 && !_isTimeUp)
@@ -44,7 +44,7 @@ namespace RE
             }
         }
 
-        private void ShowText() => _text.text = Convert.ToInt32(_sceneTime).ToString();
+        private void ShowText() => _text.text = FloatToMinutes(_sceneTime);
 
         private void SetLevel()
         {
@@ -54,10 +54,12 @@ namespace RE
                 _level += 1;
                 _animator.SetInteger("level", _level);
             }
-            if (_level > 3)
-                _showText = true;
+           // if (_level > 3) //Usar caso precise de timer apenas no fim da cena
+                //_showText = true;
         }
 
         private void SetTimeUp() => TimeUp?.Invoke();
+
+        private static string FloatToMinutes(float time) => TimeSpan.FromSeconds(time).ToString("mm':'ss");
     }
 }

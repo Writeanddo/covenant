@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a738d9d5a4e2a0478d2beb77181c5f1, type: 3}
-  m_Name: SS Belial
+  m_Name: SS 6 Pazuzu
   m_EditorClassIdentifier: 
-  soulBodyType: 2
-  soulBodyPlanet: 5
-  soulName: Belial
-  soulPaperTypeFace: 2
+  soulBodyType: 0
+  soulBodyPlanet: 0
+  soulName: Pazuzu
+  soulPaperTypeFace: 0
   soulPaperElement: 2
-  soulPaperPlanet: 5
+  soulPaperPlanet: 0
   soulTitle: 2
   hasSeal: 0

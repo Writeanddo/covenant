@@ -72,15 +72,15 @@ MonoBehaviour:
         type: 3}
       _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
         type: 3}
-    - _sprite: {fileID: 6151459299053561112, guid: 21b292c8f5d91ae4492e19eb3750751a,
+    - _sprite: {fileID: -1217040634637423994, guid: 21b292c8f5d91ae4492e19eb3750751a,
         type: 3}
       _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
         type: 3}
-    - _sprite: {fileID: 6151459299053561112, guid: 21b292c8f5d91ae4492e19eb3750751a,
+    - _sprite: {fileID: -9073647926504122478, guid: 21b292c8f5d91ae4492e19eb3750751a,
         type: 3}
       _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
         type: 3}
-    - _sprite: {fileID: 6151459299053561112, guid: 21b292c8f5d91ae4492e19eb3750751a,
+    - _sprite: {fileID: 4751518241550565021, guid: 21b292c8f5d91ae4492e19eb3750751a,
         type: 3}
       _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
         type: 3}

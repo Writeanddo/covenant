@@ -21,6 +21,7 @@ namespace RE.Soul
         private SoulSpawner _soulSpawner;
         Transform _actualWaypoint;
         SoulState _actualSoulState;
+        int _actualSoulIndex = 0;
 
         static System.Random rnd = new System.Random();
 
@@ -44,7 +45,7 @@ namespace RE.Soul
             for (int i = 0; i < _queueLimit; i++)
             {
                 _actualWaypoint = _waypoints[i];
-                GetRandomSoul();
+                GetQueueSoul(i);
                 EnqueueSoul();
                 if (i  == 0)
                     _soulSpawner.SpawnPaper(_actualSoulState);
@@ -70,6 +71,12 @@ namespace RE.Soul
         {
             int r = rnd.Next(_souls.Count);
             _actualSoulState = _souls[r];
+        }
+
+        private void GetQueueSoul(int? index = null)
+        {
+            _actualSoulIndex = index ?? (_actualSoulIndex + 1) % _souls.Count;
+            _actualSoulState = _souls[_actualSoulIndex];
         }
 
         private void Sign()
@@ -115,7 +122,7 @@ namespace RE.Soul
         {
             yield return new WaitForSeconds(0.2f);
             _actualWaypoint = _portalWaypoint;
-            GetRandomSoul();
+            GetQueueSoul();
             ISoul soul = SetSoulProps();
             yield return new WaitForSeconds(0.4f);
             StartCoroutine(MoveToWaypoint(soul.SoulGameObject, _waypoints.Length - 1));

@@ -13,14 +13,7 @@ namespace RE
         {
             get
             {
-                Debug.Log(key);
                 int index = _keys.IndexOf(key);
-                Debug.Log(_keys);
-                Debug.Log(index);
-                foreach (var item in _values)
-                {
-                    Debug.Log(item);
-                }
                 return _values[index];
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace RE
 {
@@ -71,21 +72,14 @@ namespace RE
 
         private void OnMouseDrag()
         {
-            Debug.Log("Entrou???");
             Vector2 inputMousePos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             _mousePos.x = Mathf.Clamp(inputMousePos.x, xMinPos, xMaxPos);
             _mousePos.y = Mathf.Clamp(inputMousePos.y, yMinPos, yMaxPos);
             transform.position = new Vector2(_mousePos.x, _mousePos.y);
             if (!miniPaper && transform.position.x < xLimitPos)
-            {
-                Debug.Log("ismini");
                 SetPaperAsMini(true);
-            }
             else if (miniPaper && transform.position.x > xLimitPos)
-            {
-                Debug.Log("NOTNOTismini");
                 SetPaperAsMini(false);
-            }
         }
 
         private void SetPaperAsMini(bool isMini)
