@@ -8,6 +8,7 @@ TagManager:
   - InteractableCandlelight
   - TableLimits
   - PaperWaypoint
+  - Soul
   layers:
   - Default
   - TransparentFX

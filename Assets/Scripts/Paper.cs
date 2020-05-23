@@ -86,15 +86,12 @@ namespace RE
         {
             miniPaper = isMini;
             _animator.SetBool("miniPaper", isMini);
-            /*foreach (Transform child in transform)
-            {
-                child.gameObject.SetActive(!isMini);
-            }*/
         }
 
         public void PaperBurn()
         {
             StartCoroutine(Co_PaperBurn());
+            _candleLight.Interacted -= PaperBurn;
         }
 
         private IEnumerator Co_PaperBurn()
@@ -111,6 +108,7 @@ namespace RE
         public void PaperSign()
         {
             StartCoroutine(Co_PaperSign());
+            _pen.Interacted -= PaperSign;
         }
 
         private IEnumerator Co_PaperSign()
@@ -123,9 +121,13 @@ namespace RE
         private IEnumerator Co_DestroyPaper()
         {
             yield return new WaitForSeconds(.3f);
+            Destroy(gameObject);
+        }
+
+        private void OnDestroy()
+        {
             _candleLight.Interacted -= PaperBurn;
             _pen.Interacted -= PaperSign;
-            Destroy(gameObject);
         }
 
     }

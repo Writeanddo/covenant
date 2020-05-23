@@ -64,5 +64,22 @@ namespace RE
                 yield return null;
             }
         }
+
+        public void PulseTime()
+        {
+            StartCoroutine(Co_PulseTime());
+        }
+
+        private IEnumerator Co_PulseTime()
+        {
+            float timer = _chromaticFXTimer;
+            Time.timeScale = 0.5f;
+            while (timer > 0)
+            {
+                timer -= Time.deltaTime;
+                yield return null;
+            }
+            Time.timeScale = 1f;
+        }
     }
 }

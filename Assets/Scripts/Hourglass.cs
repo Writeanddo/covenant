@@ -20,6 +20,8 @@ namespace RE
         private bool _isTimeUp;
         private bool _showText;
 
+        private float _time;
+
 
         private void Awake()
         {
@@ -29,22 +31,30 @@ namespace RE
             _reachLevelTime = _eachLevelTime * 3;
         }
 
+        private void Start()
+        {
+            InitializeTime();
+        }
+
+
         private void Update()
         {
-            _sceneTime -= Time.deltaTime;
+            _time -= Time.deltaTime;
             SetLevel();
 
-            if (_sceneTime > 0)
+            if (_time > 0)
                 ShowText();
 
-            if (_sceneTime <= 0 && !_isTimeUp)
+            if (_time <= 0 && !_isTimeUp)
             {
                 _isTimeUp = true;
                 SetTimeUp();
             }
         }
 
-        private void ShowText() => _text.text = FloatToMinutes(_sceneTime);
+        public void InitializeTime () => _time = _sceneTime;
+
+        private void ShowText() => _text.text = FloatToMinutes(_time);
 
         private void SetLevel()
         {
@@ -61,5 +71,6 @@ namespace RE
         private void SetTimeUp() => TimeUp?.Invoke();
 
         private static string FloatToMinutes(float time) => TimeSpan.FromSeconds(time).ToString("mm':'ss");
+
     }
 }

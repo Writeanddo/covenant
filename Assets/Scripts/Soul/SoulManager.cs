@@ -28,11 +28,11 @@ namespace RE.Soul
         private void Awake()
         {
             _soulCheck = GetComponent<SoulCheck>();
+            _soulSpawner = GetComponent<SoulSpawner>();
             _candleLight = FindObjectOfType<CandleLight>();
             _candleLight.Interacted += Burn;
             _pen = FindObjectOfType<Pen>();
             _pen.Interacted += Sign;
-            _soulSpawner = GetComponent<SoulSpawner>();
         }
 
         private void Start()
@@ -40,7 +40,7 @@ namespace RE.Soul
             SetInitialSoulQueue();
         }
 
-        private void SetInitialSoulQueue()
+        public void SetInitialSoulQueue()
         {
             for (int i = 0; i < _queueLimit; i++)
             {
