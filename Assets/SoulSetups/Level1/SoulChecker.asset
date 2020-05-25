@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2054d75a59f50954c98e0a3eb227d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 26465e14a0698e6498ad7b18c2e51136, type: 3}
   m_Name: SoulChecker
   m_EditorClassIdentifier: 
   valuesToCheck: 03000000

@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a738d9d5a4e2a0478d2beb77181c5f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 47d0498ddd3660d44a20dcd784b80d98, type: 3}
   m_Name: SS 5 Paimon
   m_EditorClassIdentifier: 
-  soulBodyType: 5
-  soulBodyPlanet: 0
+  soulBodyType: 10
+  soulBodyPlanet: 5
   soulName: Paimon
-  soulPaperTypeFace: 5
-  soulPaperElement: 1
-  soulPaperPlanet: 0
+  soulPaperTypeFace: 10
+  soulPaperElement: 0
+  soulPaperPlanet: 5
   soulTitle: 1
   hasSeal: 0

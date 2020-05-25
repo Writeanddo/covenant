@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61b1a62f7f7d0f4d99726be620efce2, type: 3}
+  m_Name: SoulDictionary
+  m_EditorClassIdentifier: 
+  soulTypeDictionary:
+    _keys: 0000000001000000020000000300000004000000050000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000
+    _values:
+    - _sprite: {fileID: -5968165319010354009, guid: 393163ecd7cc0b4499bd09915b31919f,
+        type: 3}
+      _gameObject: {fileID: 5853607304867546633, guid: d5f7c78d6e6851c4d888657f69f8bc02,
+        type: 3}
+    - _sprite: {fileID: 4531577867857803509, guid: ebf6cf7a8f76e15458159fa96fe4579d,
+        type: 3}
+      _gameObject: {fileID: 9005203374789217585, guid: 245cc3e9b22d0a044a9342556eef0532,
+        type: 3}
+    - _sprite: {fileID: 3991347721593673858, guid: f100162bb9eb91145b070cdf84c26d72,
+        type: 3}
+      _gameObject: {fileID: 3895212407109883055, guid: 856aa4076390ee645982f2c58bc831f3,
+        type: 3}
+    - _sprite: {fileID: 6337884930390067242, guid: 840dd2ae713021146ba7b469da3a80ee,
+        type: 3}
+      _gameObject: {fileID: 1094757084942454436, guid: 5c8fc54444757c44e9e85685c0ca0b6f,
+        type: 3}
+    - _sprite: {fileID: -6828355987936189373, guid: 662b8f7465f855246809278c310f8b58,
+        type: 3}
+      _gameObject: {fileID: 1493631096810584262, guid: 8f6c6d97df6f13543a8663fb4f0a4ad0,
+        type: 3}
+    - _sprite: {fileID: -883680682428084104, guid: 6eaa0935f2cfb3749b2c78bfbfffcc4a,
+        type: 3}
+      _gameObject: {fileID: 1389547606179972185, guid: 2d0c866376107c74fa4befd18fbe5a43,
+        type: 3}
+    - _sprite: {fileID: 4003276087069945553, guid: d9051b766510d0441a3deb0cfeccd4af,
+        type: 3}
+      _gameObject: {fileID: 8075314939622220937, guid: 0d5b649af5741c44b81c10e988062aab,
+        type: 3}
+    - _sprite: {fileID: 2273392540444523166, guid: 7beccc931c9c6d84787a754453980e6f,
+        type: 3}
+      _gameObject: {fileID: 6271021672292903407, guid: 4f169ec45586cd14c9494c777b25cfd4,
+        type: 3}
+    - _sprite: {fileID: 1453589144278258210, guid: d1b38db7e47b2b842bb1c4ecd6ff840c,
+        type: 3}
+      _gameObject: {fileID: 136967931329770567, guid: 51d30cd6f5b4c564da70a776f1de5320,
+        type: 3}
+    - _sprite: {fileID: -1264017714254301817, guid: 0b2e7cdef9b181f4c8bc5434de4e3801,
+        type: 3}
+      _gameObject: {fileID: 7000097500482784614, guid: 1816283f97196704fb96b4f08ed1b385,
+        type: 3}
+    - _sprite: {fileID: -2450592964413954807, guid: be6d6289788924a40bc9f8891024eaca,
+        type: 3}
+      _gameObject: {fileID: 8681723445265113545, guid: a6d6a67be14ed7e4d895fc9a0b84569e,
+        type: 3}
+    - _sprite: {fileID: -2947573409582359557, guid: dcfdec2186a71984c81413e872a1ea65,
+        type: 3}
+      _gameObject: {fileID: 7539610037847013259, guid: 1b84b6f61f92c4e4fa0726348d1b4c23,
+        type: 3}
+    - _sprite: {fileID: 1824142150643927370, guid: c460485d6fc96764cb506987b27d3c3a,
+        type: 3}
+      _gameObject: {fileID: 6772184719775484898, guid: a841bb6b1f0038a4aa3918f40647b091,
+        type: 3}
+    - _sprite: {fileID: -6200789704982117625, guid: 495813b628df3fa4096d82d94e196ac1,
+        type: 3}
+      _gameObject: {fileID: 7577073100996942452, guid: e0957766747741a45974f6aee1257a3a,
+        type: 3}
+    - _sprite: {fileID: -752854468453545358, guid: 1b1ca5c72ab7fa743afe406081c55871,
+        type: 3}
+      _gameObject: {fileID: 574964504056853424, guid: fac31f96bc14b824689f94c6ec6157d9,
+        type: 3}
+  soulPlanetDictionary:
+    _keys: 00000000010000000200000004000000060000000500000003000000
+    _values:
+    - _sprite: {fileID: -7969909728831317859, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: -5048305614486487270, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: 6542205692387176553, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: 31964767887695495, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: -8268541130945840638, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: -4096412085795113499, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+    - _sprite: {fileID: 442771260852349703, guid: a53be018e83e6d447a1f050166dc30a3,
+        type: 3}
+  soulTitleDictionary:
+    _keys: 020000000100000000000000
+    _values:
+    - _sprite: {fileID: 7423711640626229801, guid: 9d4614ff861a03d408c789d99a2cbc11,
+        type: 3}
+    - _sprite: {fileID: -8135338758239342235, guid: 9d4614ff861a03d408c789d99a2cbc11,
+        type: 3}
+    - _sprite: {fileID: 5921082514122777518, guid: 9d4614ff861a03d408c789d99a2cbc11,
+        type: 3}
+  soulElementDictionary:
+    _keys: 01000000020000000300000000000000
+    _values:
+    - _sprite: {fileID: -1217040634637423994, guid: 21b292c8f5d91ae4492e19eb3750751a,
+        type: 3}
+      _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
+        type: 3}
+    - _sprite: {fileID: -9073647926504122478, guid: 21b292c8f5d91ae4492e19eb3750751a,
+        type: 3}
+      _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
+        type: 3}
+    - _sprite: {fileID: 6151459299053561112, guid: 21b292c8f5d91ae4492e19eb3750751a,
+        type: 3}
+      _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
+        type: 3}
+    - _sprite: {fileID: 4751518241550565021, guid: 21b292c8f5d91ae4492e19eb3750751a,
+        type: 3}
+      _gameObject: {fileID: 2996085344227937402, guid: 2a7b6288e48326b4792f7a8914a66337,
+        type: 3}
