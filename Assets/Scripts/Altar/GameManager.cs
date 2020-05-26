@@ -75,7 +75,6 @@ namespace RE
                 SetSuccess();
             else
                 SetFail();
-
         }
 
         public void SetSuccess()
@@ -129,7 +128,5 @@ namespace RE
             yield return new WaitForSeconds(0.25f);
             SceneManager.LoadScene(index);
         }
-
-
     }
 }

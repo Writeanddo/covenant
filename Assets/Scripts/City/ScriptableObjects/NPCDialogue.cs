@@ -11,9 +11,10 @@ namespace RE
         public List<Dialogue> _dialogues;
     }
 
+    [Serializable]
     public class Dialogue
     {
-        public string Author { get; set; }
-        public string Phrase { get; set; }
+        public string author;
+        public string phrase;
     }
 }
