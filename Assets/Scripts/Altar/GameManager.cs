@@ -1,10 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Events;
 using TMPro;
 using RE.Soul;
-
 
 namespace RE
 {
@@ -23,6 +22,7 @@ namespace RE
         [SerializeField] TextMeshPro _failText;
 
         [Header("GameObjects and Prefabs")]
+        [SerializeField] int _nextScene;
         [SerializeField] Demon _demon;
         [SerializeField] Animator _sceneTransition;
         [SerializeField] GameObject _altarCanvasPrefab;
@@ -100,11 +100,10 @@ namespace RE
 
         public void SetChangeScene(bool transition = false)
         {
-            int nextScene = _actualScene.buildIndex + 1;
             if (transition)
-                StartCoroutine(Co_TransitionScene(nextScene));
+                StartCoroutine(Co_TransitionScene(_nextScene));
             else
-                SceneManager.LoadScene(nextScene);
+                SceneManager.LoadScene(_nextScene);
         }
 
         private IEnumerator Co_TransitionScene(int index)

@@ -10,6 +10,9 @@ public class CityCamera : MonoBehaviour
     [SerializeField] float maxSpeed = 9.5f;
     [SerializeField] float _chromaticFXSpeed;
 
+    [SerializeField] Transform _minXpos;
+    [SerializeField] Transform _maxXpos;
+
     private float xVelocity = 0f;
     private float yVelocity = 0f;
     public float Duration { get; set; }
@@ -27,7 +30,11 @@ public class CityCamera : MonoBehaviour
     {
         Duration = 1f;
         ChromaticPulse();
-        Vector2 newPos = new Vector2(player.transform.position.x - _xTransitionPos, transform.position.y);
+    }
+
+    public void SetNewPos()
+    {
+        Vector2 newPos = new Vector2(Mathf.Clamp((player.transform.position.x - _xTransitionPos), _minXpos.position.x, _maxXpos.position.x), transform.position.y);
         transform.position = newPos;
     }
 
@@ -36,11 +43,16 @@ public class CityCamera : MonoBehaviour
         MoveCamera();
     }
 
+    //REFATORAR!!!
     private void MoveCamera()
     {
         float newXpos = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref xVelocity, smoothTime, maxSpeed);
         float newYpos = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref yVelocity, smoothTime, maxSpeed);
-        transform.position = new Vector3(newXpos, newYpos, -11f);
+        transform.position = new Vector3(
+                                    Mathf.Clamp(newXpos, _minXpos.position.x, _maxXpos.position.x),
+                                    newYpos,
+                                    -11f
+                                );
     }
 
     //REFATORAR!!!

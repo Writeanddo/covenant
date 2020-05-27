@@ -14,7 +14,7 @@ namespace RE
     [Serializable]
     public class Dialogue
     {
-        public string author;
         public string phrase;
+        public GameObject dialogPrefab;
     }
 }

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace RE
 {
@@ -7,6 +7,20 @@ namespace RE
     public class GameState : ScriptableObject
     {
         public string actualId;
-        public Vector2 playerPosition;
+        public Vector2 characterPosition;
+        public bool tempZeroBool;
+
+        public void TempZeroGameState()
+        {
+            if (!tempZeroBool)
+                return;
+
+            tempZeroBool = false;
+            actualId = null;
+            characterPosition = new Vector2(24.5f, 2.85f);
+        }
     }
+
+    
+   
 }

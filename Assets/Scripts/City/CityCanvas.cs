@@ -1,13 +1,76 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.Events;
+using TMPro;
 
 namespace RE.City
 {
     public class CityCanvas : MonoBehaviour
     {
-        public void SetDialog(NPCDialogue npcDialogue)
+        [SerializeField] GameObject _container;
+        [SerializeField] UnityEvent _closeEvent;
+
+        private CityManager _cityManager;
+        private NPCDialogue _actualNPCDialogue;
+        private int _actualDialogueIndex = 0;
+        private GameObject _actualDialogue;
+        private bool _finalDialog = false;
+
+        private void Awake()
         {
-            Debug.Log("chegou aqui" + npcDialogue.name);
+            _cityManager = FindObjectOfType<CityManager>();
+        }
+
+        public void SetInitialDialogue(NPCDialogue npcDialogue)
+        {
+            _actualNPCDialogue = npcDialogue;
+            SetDialog();
+        }
+
+        public void SetFinalDialogue(NPCDialogue npcDialogue)
+        {
+            _actualNPCDialogue = npcDialogue;
+            _finalDialog = true;
+            SetDialog();
+        }
+
+        public void SetDialog()
+        {
+            _container.SetActive(true);
+            InstantiateDialog();
+        }
+
+        public void NextDialogue()
+        {
+            _actualDialogueIndex++;
+            if (_actualDialogueIndex >= _actualNPCDialogue._dialogues.Count)
+                EndDialog();
+            else
+            {
+                Destroy(_actualDialogue);
+                InstantiateDialog();
+            }
+        }
+
+        private void EndDialog()
+        {
+            if (_finalDialog)
+            {
+                _finalDialog = false;
+                Destroy(_actualDialogue);
+                _container.SetActive(false);
+                _closeEvent.Invoke();
+            }
+            else
+                _cityManager.SetTutorialScene();
+        }
+
+        private void InstantiateDialog()
+        {
+            Dialogue dialogue = _actualNPCDialogue._dialogues[_actualDialogueIndex];
+            _actualDialogue = Instantiate(dialogue.dialogPrefab);
+            _actualDialogue.transform.SetParent(_container.transform, false);
+            TextMeshProUGUI textMesh = _actualDialogue.transform.Find("Phrase").GetComponent<TextMeshProUGUI>();
+            textMesh.text = dialogue.phrase;
         }
     }
 
