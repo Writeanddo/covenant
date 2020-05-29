@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1dfd7e3226694f43b94411e19d70b6b, type: 3}
+  m_Name: IceCreamerInitialDialogue
+  m_EditorClassIdentifier: 
+  _dialogues:
+  - phrase: "Fala parceiro, tempos dif\xEDceis, n\xE3o \xE9 mesmo? N\xE3o to bem
+      n\xE3o, acho que t\xF4 com gripe, ou algo pior... cof cof..."
+    dialogPrefab: {fileID: 6356720780585475606, guid: 09427c089551b6d4fac831531f4e1370,
+      type: 3}

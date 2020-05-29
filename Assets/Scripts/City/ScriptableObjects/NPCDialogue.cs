@@ -14,6 +14,7 @@ namespace RE
     [Serializable]
     public class Dialogue
     {
+        [TextArea(5, 10)]
         public string phrase;
         public GameObject dialogPrefab;
     }

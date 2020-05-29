@@ -22,12 +22,14 @@ namespace RE.City
 
         public void SetInitialDialogue(NPCDialogue npcDialogue)
         {
+            _actualDialogueIndex = 0;
             _actualNPCDialogue = npcDialogue;
             SetDialog();
         }
 
         public void SetFinalDialogue(NPCDialogue npcDialogue)
         {
+            Debug.Log("SetFinalDialogue");
             _actualNPCDialogue = npcDialogue;
             _finalDialog = true;
             SetDialog();
@@ -66,6 +68,7 @@ namespace RE.City
 
         private void InstantiateDialog()
         {
+            Debug.Log("InstantiateDialog");
             Dialogue dialogue = _actualNPCDialogue._dialogues[_actualDialogueIndex];
             _actualDialogue = Instantiate(dialogue.dialogPrefab);
             _actualDialogue.transform.SetParent(_container.transform, false);

@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    private Rigidbody2D _rb;
+    [SerializeField] float _moveSpeed;
     private Camera _mainCamera;
+    private Animator _animator;
+    private SpriteRenderer _sprite;
 
     private Vector3 _mousePosition;
     private bool _move = false;
     private bool _isClickable = true;
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
         _mainCamera = FindObjectOfType<Camera>();
+        _animator = GetComponent<Animator>();
+        _sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && _isClickable)
         {
-            Debug.Log("Upadta");
             _mousePosition = new Vector3(_mainCamera.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y, transform.position.z);
             _move = true;
+            _animator.SetBool("walk", true);
+            if (_mousePosition.x > transform.position.x)
+                _sprite.flipX = true;
+            else
+                _sprite.flipX = false;
         }
     }
 
@@ -30,16 +37,22 @@ public class Character : MonoBehaviour
     {
         if (_move && transform.position.x != _mousePosition.x)
         {
-            Debug.Log("FixedUpadta");
 
-            transform.position = Vector2.MoveTowards(transform.position, _mousePosition, 4f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, _mousePosition, _moveSpeed * Time.deltaTime);
         }
         else if (_move)
+        {
             _move = false;
+            _animator.SetBool("walk", false);
+        }
     }
 
     public void SetIsClickable() => _isClickable = true;
     public void SetIsNotClickable() => _isClickable = false;
-    public void StopMove() => _move = false;
+    public void StopMove()
+    {
+        _move = false;
+        _animator.SetBool("walk", false);
+    }
 
 }

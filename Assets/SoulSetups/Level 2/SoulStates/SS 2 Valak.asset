@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d0498ddd3660d44a20dcd784b80d98, type: 3}
+  m_Name: SS 2 Valak
+  m_EditorClassIdentifier: 
+  soulBodyType: 8
+  soulBodyPlanet: 3
+  soulName: Valak
+  soulPaperTypeFace: 8
+  soulPaperElement: 2
+  soulPaperPlanet: 3
+  soulTitle: 0
+  hasSeal: 0
