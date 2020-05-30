@@ -10,16 +10,19 @@ namespace RE
         public event Action Interacted;
 
         private Animator _animator;
+        private AudioSource _audioSource;
         private bool _clickable = true;
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            _audioSource = GetComponent<AudioSource>();
         }
 
         public void Interact()
         {
             Interacted.Invoke();
+            _audioSource.Play();
         }
 
         private void OnMouseDown()

@@ -26,10 +26,15 @@ namespace RE
         [SerializeField] Demon _demon;
         [SerializeField] Animator _sceneTransition;
         [SerializeField] GameObject _altarCanvasPrefab;
+        [SerializeField] AudioClip _errorSound;
+        [SerializeField] AudioClip _transitionOpenSound;
+        [SerializeField] AudioClip _transitionCloseSound;
+        public bool gameEnd = false;
 
         private AltarCamera _altarCamera;
 
         private Scene _actualScene;
+        private AudioSource _audioSource;
         private int _successStatus = 0;
         private int _failStatus = 0;
 
@@ -37,6 +42,7 @@ namespace RE
         {
             _altarCamera = FindObjectOfType<AltarCamera>();
             _actualScene = SceneManager.GetActiveScene();
+            _audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -51,8 +57,10 @@ namespace RE
 
         public void GameEnd() ///REFATORAR
         {
+            gameEnd = true;
             _altarCamera.Duration = .4f;
             _altarCamera.ChromaticPulse();
+            _audioSource.PlayOneShot(_transitionOpenSound);
             GameObject altarCanvas = Instantiate(_altarCanvasPrefab, transform.position, Quaternion.identity);
             altarCanvas.GetComponent<AltarCanvas>().SetStatus(CheckSuccess(), SetText(_successStatus, _successNumber), SetText(_failStatus, _failNumber));
         }
@@ -88,7 +96,6 @@ namespace RE
             _failStatus++;
             _failTextStatus.text = _failStatus.ToString();
             _demon.SetStatus();
-
             _altarCamera.Duration = .4f;
             _altarCamera.PulseTime();
             _altarCamera.ChromaticPulse();
@@ -96,12 +103,17 @@ namespace RE
 
             if (_failStatus >= _failNumber)
                 GameEnd();
+            else
+                _audioSource.PlayOneShot(_errorSound);
         }
 
         public void SetChangeScene(bool transition = false)
         {
             if (transition)
+            {
+                _audioSource.PlayOneShot(_transitionCloseSound);
                 StartCoroutine(Co_TransitionScene(_nextScene));
+            }
             else
                 SceneManager.LoadScene(_nextScene);
         }
@@ -118,6 +130,7 @@ namespace RE
 
         public void ResetScene()
         {
+            _audioSource.PlayOneShot(_transitionCloseSound);
             StartCoroutine(Co_ResetScene(_actualScene.buildIndex));
         }
 

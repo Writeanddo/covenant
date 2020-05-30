@@ -8,10 +8,14 @@ namespace RE
     public class Paper : MonoBehaviour
     {
         [SerializeField] float _speed;
+        [SerializeField] AudioClip _passSound;
+        [SerializeField] AudioClip _getSound;
         private Transform _paperWaypoint;
         private GameObject _tableLimits;
         private Animator _animator;
+        private AudioSource _audioSource;
 
+        private GameManager _gameManager;
         private Camera _mainCamera;
         private CandleLight _candleLight;
         private Pen _pen;
@@ -28,7 +32,9 @@ namespace RE
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            _audioSource = GetComponent<AudioSource>();
             _mainCamera = FindObjectOfType<Camera>();
+            _gameManager = FindObjectOfType<GameManager>();
             _candleLight = FindObjectOfType<CandleLight>();
             _candleLight.Interacted += PaperBurn;
             _pen = FindObjectOfType<Pen>();
@@ -39,8 +45,12 @@ namespace RE
 
         private void Start()
         {
-            SetXYPos();
-            StartCoroutine(Co_MoveToWaypoint());
+            if (!_gameManager.gameEnd)
+            {
+                SetXYPos();
+                _audioSource.PlayOneShot(_passSound);
+                StartCoroutine(Co_MoveToWaypoint());
+            }
         }
 
         private IEnumerator Co_MoveToWaypoint()
@@ -68,6 +78,10 @@ namespace RE
                 if (child.name == "xLimit")
                     xLimitPos = child.position.x;
             }
+        }
+        private void OnMouseDown()
+        {
+            _audioSource.PlayOneShot(_getSound);
         }
 
         private void OnMouseDrag()

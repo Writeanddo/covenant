@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     private Camera _mainCamera;
     private Animator _animator;
     private SpriteRenderer _sprite;
+    private AudioSource _audioSource;
 
     private Vector3 _mousePosition;
     private bool _move = false;
@@ -17,6 +18,7 @@ public class Character : MonoBehaviour
         _mainCamera = FindObjectOfType<Camera>();
         _animator = GetComponent<Animator>();
         _sprite = GetComponent<SpriteRenderer>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -26,6 +28,7 @@ public class Character : MonoBehaviour
             _mousePosition = new Vector3(_mainCamera.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y, transform.position.z);
             _move = true;
             _animator.SetBool("walk", true);
+            _audioSource.Play();
             if (_mousePosition.x > transform.position.x)
                 _sprite.flipX = true;
             else
@@ -42,8 +45,7 @@ public class Character : MonoBehaviour
         }
         else if (_move)
         {
-            _move = false;
-            _animator.SetBool("walk", false);
+            StopMove();
         }
     }
 
@@ -53,6 +55,7 @@ public class Character : MonoBehaviour
     {
         _move = false;
         _animator.SetBool("walk", false);
+        _audioSource.Stop();
     }
 
 }
