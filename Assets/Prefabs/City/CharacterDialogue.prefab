@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 615188935608413083, guid: beb6e33ea0570cc49abec985a737ef26,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 615188935608413083, guid: beb6e33ea0570cc49abec985a737ef26,
         type: 3}
@@ -157,6 +157,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textAlignment
       value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 615188935608413083, guid: beb6e33ea0570cc49abec985a737ef26,
+        type: 3}
+      propertyPath: m_text
+      value: Parsons
       objectReference: {fileID: 0}
     - target: {fileID: 615188936135506794, guid: beb6e33ea0570cc49abec985a737ef26,
         type: 3}

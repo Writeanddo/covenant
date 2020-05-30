@@ -17,5 +17,5 @@ MonoBehaviour:
     dialogPrefab: {fileID: 1914251749909182219, guid: dd3c61bb80e24824dac93e2701c57a93,
       type: 3}
   - phrase: It`s a miracle! Pistachio`s ice cream is just a hit!
-    dialogPrefab: {fileID: 6356720780585475606, guid: 09427c089551b6d4fac831531f4e1370,
+    dialogPrefab: {fileID: 7511109105498480826, guid: ed9b3ca269e968d4299f81ce3ed9587e,
       type: 3}

@@ -22,10 +22,10 @@ namespace RE
             else
             {
                 _gameState = ScriptableObject.CreateInstance(typeof(GameState)) as GameState;
-                //for (int i = 0; i < maxStates; i++)
-               // {
-                    //_npcStates[i] = ScriptableObject.CreateInstance(typeof(NPCState)) as NPCState;
-               // }
+                for (int i = 0; i < _npcStates.Length; i++)
+                {
+                    _npcStates[i].npcStatus = NPCStatus.Initial;
+                }
                 DontDestroyOnLoad(gameObject);
             }
 

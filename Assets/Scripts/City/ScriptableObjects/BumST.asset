@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Bum
   npcStatus: 0
-  tutorialLevelIndex: 1
+  tutorialLevelIndex: 2
   greetingAnimation: 0

@@ -126,7 +126,7 @@ PrefabInstance:
     - target: {fileID: 615188935608413083, guid: beb6e33ea0570cc49abec985a737ef26,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 615188935608413083, guid: beb6e33ea0570cc49abec985a737ef26,
         type: 3}
@@ -142,6 +142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 615188935608413083, guid: beb6e33ea0570cc49abec985a737ef26,
+        type: 3}
+      propertyPath: m_text
+      value: Aleister
       objectReference: {fileID: 0}
     - target: {fileID: 615188936135506797, guid: beb6e33ea0570cc49abec985a737ef26,
         type: 3}

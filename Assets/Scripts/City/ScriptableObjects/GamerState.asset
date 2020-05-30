@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:RE:NPCState
   id: Gamer
   npcStatus: 0
-  tutorialLevelIndex: 1
+  tutorialLevelIndex: 6
   greetingAnimation: 0

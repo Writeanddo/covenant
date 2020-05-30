@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Lover
   npcStatus: 0
-  tutorialLevelIndex: 1
+  tutorialLevelIndex: 4
   greetingAnimation: 0
