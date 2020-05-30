@@ -1,30 +1,33 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 namespace RE
 {
+
     public class NPC : MonoBehaviour
     {
-        [SerializeField] public NPCState _state;
+        [SerializeField] int _index;
         [SerializeField] UnityEvent _setInitialDialogue;
         [SerializeField] UnityEvent _setFinalDialogue;
 
+        //private NPCState _state;
         private Animator _animator;
+        private MainManager _mainManager;
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            _mainManager = FindObjectOfType<MainManager>();
+            //_state = _mainManager._npcStates[_index];
         }
 
         private void Start()
         {
             if (CheckFinalStatus())
             {
-                _state.ChangeStatus(NPCStatus.Ended);
+                _mainManager._npcStates[_index].ChangeStatus(NPCStatus.Ended);
                 SetNPCConclusion();
             }
             else if (CheckEndedStatus())
@@ -40,13 +43,8 @@ namespace RE
             if (CheckFinalStatus() || CheckEndedStatus())
                 return;
 
-            if (_state.greetingAnimation)
-            {
-                _animator.SetTrigger("greet");
-            }
-            Debug.Log("Entrou" + _state.npcStatus);
-            _state.ChangeStatus(NPCStatus.Final);
-            Debug.Log("Mudou" + _state.npcStatus);
+            _mainManager._npcStates[_index].ChangeStatus(NPCStatus.Final);
+
 
             _setInitialDialogue?.Invoke();
             collision.GetComponent<Character>().StopMove();
@@ -56,7 +54,7 @@ namespace RE
         {
             if (CheckFinalStatus())
             {
-                _state.ChangeStatus(NPCStatus.Ended);
+                _mainManager._npcStates[_index].ChangeStatus(NPCStatus.Ended);
                 SetNPCConclusion();
                 return this;
             }
@@ -82,11 +80,12 @@ namespace RE
             _animator.SetTrigger("concluded");
         }
 
-        public bool CheckFinalStatus() => _state.npcStatus == NPCStatus.Final;
-        public bool CheckEndedStatus() => _state.npcStatus == NPCStatus.Ended;
+        public bool CheckFinalStatus() => _mainManager._npcStates[_index].npcStatus == NPCStatus.Final;
+        public bool CheckEndedStatus() => _mainManager._npcStates[_index].npcStatus == NPCStatus.Ended;
 
     }
 
+    [Serializable]
     public enum NPCStatus
     {
         Initial,

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: IceCreamerState
   m_EditorClassIdentifier: Assembly-CSharp:RE:NPCState
   id: IceCreamer
-  npcStatus: 2
+  npcStatus: 0
   tutorialLevelIndex: 1
   greetingAnimation: 0

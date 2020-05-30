@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace RE
 {
-    [CreateAssetMenu(fileName = "NPCState", menuName = "States/NPCState")]
-    [Serializable]
+    [CreateAssetMenu(fileName = "NPCState", menuName = "States/NPCState")] [Serializable]
     public class NPCState : ScriptableObject
     {
         public string id;
@@ -15,14 +14,6 @@ namespace RE
         public void ChangeStatus(NPCStatus status)
         {
             npcStatus = status;
-            ForceSerialization();
-        }
-
-        void ForceSerialization()
-        {
-            #if UNITY_EDITOR
-                UnityEditor.EditorUtility.SetDirty(this);
-            #endif
         }
     }
 }

@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
 
     private Vector3 _mousePosition;
     private bool _move = false;
-    private bool _isClickable = true;
+    public bool _isClickable = true;
     private void Awake()
     {
         _mainCamera = FindObjectOfType<Camera>();

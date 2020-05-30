@@ -9,11 +9,12 @@ namespace RE.City
     public class CityManager : MonoBehaviour
     {
         [SerializeField] List<NPC> _npcs;
-        [SerializeField] GameState _gameState;
+        public GameState _gameState;
 
         private Character _character;
         private CityCamera _cityCamera;
-        private NPC _actualNPC;
+        private int _actualNPC;
+        private MainManager _mainManager;
 
         private bool tempZeroBool = true;
 
@@ -21,11 +22,13 @@ namespace RE.City
         {
             _character = FindObjectOfType<Character>();
             _cityCamera = FindObjectOfType<CityCamera>();
+            _mainManager = FindObjectOfType<MainManager>();
+            _gameState = _mainManager._gameState;
         }
 
         private void Start()
         {
-            _gameState.TempZeroGameState(); /// REMOVER DEPOIS
+            _mainManager._gameState.TempZeroGameState(); /// REMOVER DEPOIS
 
             SetCharacterPosition();
             _cityCamera.SetNewPos();
@@ -34,7 +37,7 @@ namespace RE.City
 
         private void SetCharacterPosition()
         {
-            _character.transform.position = _gameState.characterPosition;
+            _character.transform.position = _mainManager._gameState.characterPosition;
         }
 
         private void SetNPCAnimationAndDialog()
@@ -53,16 +56,20 @@ namespace RE.City
             }*/
         }
 
-        public void SetNPC(NPC npc)
+        public void SetNPC(int index)
         {
-            _actualNPC = npc;
+            _actualNPC = index;
         }
 
         public void SetTutorialScene()
         {
-            _gameState.SetActualId(_actualNPC._state.id);
-            _gameState.SetCharacterPosition(_character.transform.position);
-            SceneManager.LoadScene(_actualNPC._state.tutorialLevelIndex);
+            Debug.Log("index" + _actualNPC);
+            Debug.Log("length" + _mainManager._npcStates);
+            Debug.Log(_mainManager._npcStates[_actualNPC].id);
+            Debug.Log(_mainManager._npcStates[_actualNPC].tutorialLevelIndex);
+            _mainManager._gameState.SetActualId(_mainManager._npcStates[_actualNPC].id);
+            _mainManager._gameState.SetCharacterPosition(_character.transform.position);
+            SceneManager.LoadScene(_mainManager._npcStates[_actualNPC].tutorialLevelIndex);
         }
 
         public void ChangeEndScene(int sceneIndex)

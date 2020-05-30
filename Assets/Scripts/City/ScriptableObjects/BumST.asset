@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: deb99bab5efbe82489aa450dc4cd7df4, type: 3}
-  m_Name: BumState
-  m_EditorClassIdentifier: Assembly-CSharp:RE:NPCState
+  m_Name: BumST
+  m_EditorClassIdentifier: 
   id: Bum
-  npcStatus: 2
+  npcStatus: 0
   tutorialLevelIndex: 1
   greetingAnimation: 0
