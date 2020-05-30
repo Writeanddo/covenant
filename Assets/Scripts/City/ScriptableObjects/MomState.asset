@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MomState
   m_EditorClassIdentifier: Assembly-CSharp:RE:NPCState
   id: Mom
-  npcStatus: 0
-  tutorialLevelIndex: 1
+  npcStatus: 2
+  tutorialLevelIndex: 9
   greetingAnimation: 0

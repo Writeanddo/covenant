@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: GamerFinalDialogue
   m_EditorClassIdentifier: 
   _dialogues:
-  - phrase: "Fala parceiro, tempos dif\xEDceis, n\xE3o \xE9 mesmo? N\xE3o to bem
-      n\xE3o, acho que t\xF4 com gripe, ou algo pior... cof cof..."
+  - phrase: Yuppi, now I can play videogames till midnight!!
     dialogPrefab: {fileID: 5393062824926254929, guid: 2dc4691bfd8d0174faa5c05577a894a4,
+      type: 3}
+  - phrase: ...
+    dialogPrefab: {fileID: 1914251749909182219, guid: dd3c61bb80e24824dac93e2701c57a93,
       type: 3}

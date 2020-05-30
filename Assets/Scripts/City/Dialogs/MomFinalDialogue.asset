@@ -12,8 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1dfd7e3226694f43b94411e19d70b6b, type: 3}
   m_Name: MomFinalDialogue
   m_EditorClassIdentifier: 
-  _dialogues:
-  - phrase: "Fala parceiro, tempos dif\xEDceis, n\xE3o \xE9 mesmo? N\xE3o to bem
-      n\xE3o, acho que t\xF4 com gripe, ou algo pior... cof cof..."
-    dialogPrefab: {fileID: 3296806898237199768, guid: 8ec1f1b79cd99b14894ea9f58ca0b274,
-      type: 3}
+  _dialogues: []

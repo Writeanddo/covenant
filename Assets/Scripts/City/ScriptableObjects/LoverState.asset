@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LoverState
   m_EditorClassIdentifier: 
   id: Lover
-  npcStatus: 0
+  npcStatus: 2
   tutorialLevelIndex: 1
   greetingAnimation: 0

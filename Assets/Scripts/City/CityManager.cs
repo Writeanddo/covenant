@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace RE.City
@@ -42,13 +43,14 @@ namespace RE.City
                 return;
 
             _character.SetIsNotClickable();
-            foreach (NPC npc in _npcs)
+           /* foreach (NPC npc in _npcs)
             {
                 NPC actualNpc = npc.SetStatus();
-                Debug.Log("actualnpc " + actualNpc);
                 if (actualNpc != null)
+                {
                     _actualNPC = actualNpc;
-            }
+                }
+            }*/
         }
 
         public void SetNPC(NPC npc)
@@ -58,12 +60,20 @@ namespace RE.City
 
         public void SetTutorialScene()
         {
-            _gameState.actualId = _actualNPC._state.id;
-            _gameState.characterPosition = _character.transform.position;
+            _gameState.SetActualId(_actualNPC._state.id);
+            _gameState.SetCharacterPosition(_character.transform.position);
             SceneManager.LoadScene(_actualNPC._state.tutorialLevelIndex);
         }
 
+        public void ChangeEndScene(int sceneIndex)
+        {
+            StartCoroutine(Co_ChangeEndScene(sceneIndex));
+        }
 
-
+        private IEnumerator Co_ChangeEndScene(int sceneIndex)
+        {
+            yield return new WaitForSeconds(4f);
+            SceneManager.LoadScene(sceneIndex);
+        }
     }
 }

@@ -11,5 +11,18 @@ namespace RE
         public NPCStatus npcStatus;
         public int tutorialLevelIndex;
         public bool greetingAnimation;
+
+        public void ChangeStatus(NPCStatus status)
+        {
+            npcStatus = status;
+            ForceSerialization();
+        }
+
+        void ForceSerialization()
+        {
+            #if UNITY_EDITOR
+                UnityEditor.EditorUtility.SetDirty(this);
+            #endif
+        }
     }
 }

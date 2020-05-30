@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: IceCreamerFinalDialogue
   m_EditorClassIdentifier: 
   _dialogues:
-  - phrase: "Fala parceiro, tempos dif\xEDceis, n\xE3o \xE9 mesmo? N\xE3o to bem
-      n\xE3o, acho que t\xF4 com gripe, ou algo pior... cof cof..."
+  - phrase: How`s business?
+    dialogPrefab: {fileID: 1914251749909182219, guid: dd3c61bb80e24824dac93e2701c57a93,
+      type: 3}
+  - phrase: It`s a miracle! Pistachio`s ice cream is just a hit!
     dialogPrefab: {fileID: 6356720780585475606, guid: 09427c089551b6d4fac831531f4e1370,
       type: 3}

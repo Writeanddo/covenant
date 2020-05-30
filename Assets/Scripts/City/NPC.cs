@@ -9,7 +9,6 @@ namespace RE
 {
     public class NPC : MonoBehaviour
     {
-        [SerializeField] GameState _gameState;
         [SerializeField] public NPCState _state;
         [SerializeField] UnityEvent _setInitialDialogue;
         [SerializeField] UnityEvent _setFinalDialogue;
@@ -21,11 +20,24 @@ namespace RE
             _animator = GetComponent<Animator>();
         }
 
+        private void Start()
+        {
+            if (CheckFinalStatus())
+            {
+                _state.ChangeStatus(NPCStatus.Ended);
+                SetNPCConclusion();
+            }
+            else if (CheckEndedStatus())
+                SetEndAnimation();
+        }
+
+        
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (_gameState.actualId != null && _gameState.actualId.Contains(_state.id))
-                return;
-            if (_state.npcStatus == NPCStatus.Ended)
+            //if (_gameState.actualId != null && _gameState.actualId.Contains(_state.id))
+            //return;
+            if (CheckFinalStatus() || CheckEndedStatus())
                 return;
 
             if (_state.greetingAnimation)
@@ -33,7 +45,7 @@ namespace RE
                 _animator.SetTrigger("greet");
             }
             Debug.Log("Entrou" + _state.npcStatus);
-            _state.npcStatus = NPCStatus.Final;
+            _state.ChangeStatus(NPCStatus.Final);
             Debug.Log("Mudou" + _state.npcStatus);
 
             _setInitialDialogue?.Invoke();
@@ -44,8 +56,7 @@ namespace RE
         {
             if (CheckFinalStatus())
             {
-                Debug.Log("CheckFinalStatus");
-                _state.npcStatus = NPCStatus.Ended;
+                _state.ChangeStatus(NPCStatus.Ended);
                 SetNPCConclusion();
                 return this;
             }

@@ -13,14 +13,9 @@ MonoBehaviour:
   m_Name: BumFinalDialogue
   m_EditorClassIdentifier: 
   _dialogues:
-  - phrase: "Que beleza cara, n\xE3o \xE9 que melhorei???"
+  - phrase: Hey man, I`m feeling really nice! What you just did?
     dialogPrefab: {fileID: 615188934413197547, guid: beb6e33ea0570cc49abec985a737ef26,
       type: 3}
-  - phrase: "\xC9 Parceiro, tempos dif\xEDceis, n\xE3o \xE9 mesmo? N\xE3o to bem
-      n\xE3o, acho que t\xF4 com gripe, ou algo pior... cof cof..."
+  - phrase: I just did. Bye.
     dialogPrefab: {fileID: 1914251749909182219, guid: dd3c61bb80e24824dac93e2701c57a93,
-      type: 3}
-  - phrase: "Nossa Parceiro, tempos dif\xEDceis, n\xE3o \xE9 mesmo? N\xE3o to bem
-      n\xE3o, acho que t\xF4 com gripe, ou algo pior... cof cof..."
-    dialogPrefab: {fileID: 615188934413197547, guid: beb6e33ea0570cc49abec985a737ef26,
       type: 3}

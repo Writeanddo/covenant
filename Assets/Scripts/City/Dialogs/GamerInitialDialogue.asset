@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: GamerInitialDialogue
   m_EditorClassIdentifier: 
   _dialogues:
-  - phrase: "Fala parceiro, tempos dif\xEDceis, n\xE3o \xE9 mesmo? N\xE3o to bem
-      n\xE3o, acho que t\xF4 com gripe, ou algo pior... cof cof..."
+  - phrase: I`m faceless. I was born without. I have no eyes. But I see you, why?
     dialogPrefab: {fileID: 6415517143336198501, guid: c9cb1b59f7c2bdf47b0b2a7905333c82,
+      type: 3}
+  - phrase: You want help?
+    dialogPrefab: {fileID: 1914251749909182219, guid: dd3c61bb80e24824dac93e2701c57a93,
       type: 3}

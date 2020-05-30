@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: MomInitialDialogue
   m_EditorClassIdentifier: 
   _dialogues:
-  - phrase: "Fala parceiro, tempos dif\xEDceis, n\xE3o \xE9 mesmo? N\xE3o to bem
-      n\xE3o, acho que t\xF4 com gripe, ou algo pior... cof cof..."
+  - phrase: Why are you crying?
+    dialogPrefab: {fileID: 1914251749909182219, guid: dd3c61bb80e24824dac93e2701c57a93,
+      type: 3}
+  - phrase: My son..... my son is dead.
+    dialogPrefab: {fileID: 3296806898237199768, guid: 8ec1f1b79cd99b14894ea9f58ca0b274,
+      type: 3}
+  - phrase: I think I can bring him back.
+    dialogPrefab: {fileID: 1914251749909182219, guid: dd3c61bb80e24824dac93e2701c57a93,
+      type: 3}
+  - phrase: Whaaaat?
     dialogPrefab: {fileID: 3296806898237199768, guid: 8ec1f1b79cd99b14894ea9f58ca0b274,
       type: 3}

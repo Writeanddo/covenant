@@ -26,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamerAltar.unity
     guid: 64881b4828490734b94b45cfdc4ff83b
+  - enabled: 1
+    path: Assets/Scenes/IceCreamerAltarTutorial.unity
+    guid: ce653ea4b02d74741a2bf303c2e865bf
+  - enabled: 1
+    path: Assets/Scenes/IceCreamerAltar.unity
+    guid: 742a8c26538924c4da3f7bd9e3c5e97c
+  - enabled: 1
+    path: Assets/Scenes/MomAltarTutorial.unity
+    guid: ffe0f6b2e7f4fe841ab1aa3c43119087
+  - enabled: 1
+    path: Assets/Scenes/MomAltar.unity
+    guid: a1457b16a3f134a42b5039ada56a3352
   m_configObjects: {}
