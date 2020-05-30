@@ -326,6 +326,7 @@ MonoBehaviour:
   _textFail: {fileID: 203157543823042577}
   _textSuccess: {fileID: 203157543418285986}
   _status: {fileID: 203157544188617318}
+  _BtText: {fileID: 203157545023281075}
   _ui: {fileID: 203157545120022154}
 --- !u!61 &5307330099728149878
 BoxCollider2D:
@@ -1300,7 +1301,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.33}
-  m_SizeDelta: {x: 4.228, y: 0.758}
+  m_SizeDelta: {x: 6.503, y: 0.792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &203157545023281072
 MeshRenderer:
@@ -1375,7 +1376,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Prosseguir >
+  m_text: Next >
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffee73a4e93a66f4f825c86f7261b5e9, type: 2}
   m_sharedMaterial: {fileID: 7918573395727153995, guid: ffee73a4e93a66f4f825c86f7261b5e9,
@@ -1445,7 +1446,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 203157545023281075}
-    characterCount: 12
+    characterCount: 6
     spriteCount: 0
     spaceCount: 1
     wordCount: 1

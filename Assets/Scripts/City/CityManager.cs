@@ -45,6 +45,7 @@ namespace RE.City
             foreach (NPC npc in _npcs)
             {
                 NPC actualNpc = npc.SetStatus();
+                Debug.Log("actualnpc " + actualNpc);
                 if (actualNpc != null)
                     _actualNPC = actualNpc;
             }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d0498ddd3660d44a20dcd784b80d98, type: 3}
   m_Name: SS 8 Stolas
   m_EditorClassIdentifier: 
-  soulBodyType: 12
+  soulBodyType: 11
   soulBodyPlanet: 0
   soulName: Stolas
-  soulPaperTypeFace: 12
+  soulPaperTypeFace: 11
   soulPaperElement: 2
   soulPaperPlanet: 2
   soulTitle: 2

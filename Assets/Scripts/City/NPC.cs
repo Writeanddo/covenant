@@ -25,10 +25,17 @@ namespace RE
         {
             if (_gameState.actualId != null && _gameState.actualId.Contains(_state.id))
                 return;
+            if (_state.npcStatus == NPCStatus.Ended)
+                return;
 
-            if(_state.greetingAnimation)
+            if (_state.greetingAnimation)
+            {
                 _animator.SetTrigger("greet");
+            }
+            Debug.Log("Entrou" + _state.npcStatus);
             _state.npcStatus = NPCStatus.Final;
+            Debug.Log("Mudou" + _state.npcStatus);
+
             _setInitialDialogue?.Invoke();
             collision.GetComponent<Character>().StopMove();
         }
@@ -37,6 +44,7 @@ namespace RE
         {
             if (CheckFinalStatus())
             {
+                Debug.Log("CheckFinalStatus");
                 _state.npcStatus = NPCStatus.Ended;
                 SetNPCConclusion();
                 return this;

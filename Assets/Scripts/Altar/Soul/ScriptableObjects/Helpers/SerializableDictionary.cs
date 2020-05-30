@@ -55,7 +55,6 @@ namespace RE
         Punk3, 
         Fat, 
         Fat2,  
-        Fat3,
         Girl, 
         Girl2,
         Girl3,

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1306,19 +1306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1240720051 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4214923843525672100, guid: 5f3298fa9d3d3b14785db6bb9d55a30f,
-    type: 3}
-  m_PrefabInstance: {fileID: 4630068241136917569}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!43 &1400885907
+--- !u!43 &1198193065
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1481,6 +1469,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1240720051 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4214923843525672100, guid: 5f3298fa9d3d3b14785db6bb9d55a30f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4630068241136917569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1411665204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Permitido apenas
+  m_text: Only allowed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffee73a4e93a66f4f825c86f7261b5e9, type: 2}
   m_sharedMaterial: {fileID: 7918573395727153995, guid: ffee73a4e93a66f4f825c86f7261b5e9,
@@ -2236,7 +2236,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 10
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2260,12 +2260,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1904327049}
-    characterCount: 16
+    characterCount: 12
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -3341,7 +3341,7 @@ PrefabInstance:
     - target: {fileID: 6587222482201021593, guid: 4c8788321f31d374986736a458291145,
         type: 3}
       propertyPath: _textFail
-      value: Falhei!
+      value: My bad!
       objectReference: {fileID: 0}
     - target: {fileID: 6587222482201021593, guid: 4c8788321f31d374986736a458291145,
         type: 3}
@@ -3412,6 +3412,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971678365732795212, guid: 4c8788321f31d374986736a458291145,
+        type: 3}
+      propertyPath: m_text
+      value: My bad!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971678365732795212, guid: 4c8788321f31d374986736a458291145,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971678365732795212, guid: 4c8788321f31d374986736a458291145,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971678365732795212, guid: 4c8788321f31d374986736a458291145,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8971678367646645604, guid: 4c8788321f31d374986736a458291145,
         type: 3}

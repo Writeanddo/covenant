@@ -50,7 +50,7 @@ namespace RE.Soul
             switch (valueType)
             {
                 case CheckValueType.SoulType:
-                    CheckUniqueItem(_soulChecker.soulTypes, _actualSoul.soulPaperTypeFace);
+                    CheckUniqueItem(_soulChecker.soulTypes, _actualSoul.soulBodyType);
 
                     break;
                 case CheckValueType.SoulPlanet:
@@ -75,7 +75,7 @@ namespace RE.Soul
             }
         }
 
-        private void CheckUniqueName(string[] nameList, string name)
+        private void CheckUniqueName(string[] nameList, string name) // REFATORAR
         {
             bool nameCheck = false;
             foreach (string n in nameList)
@@ -89,14 +89,7 @@ namespace RE.Soul
 
         private void CheckUniqueItem<T>(T[] soulTypes, T t)
         {
-            foreach (var tItem in soulTypes)
-            {
-                if (!EqualityComparer<T>.Default.Equals(t, tItem))
-                {
-                    wrongValue = true;
-                    break;
-                }
-            }
+            wrongValue = !soulTypes.Any(s => t.Equals(s));
         }
     }
 

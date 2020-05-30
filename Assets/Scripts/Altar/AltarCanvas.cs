@@ -12,6 +12,7 @@ namespace RE
         [SerializeField] TextMeshPro _textFail;
         [SerializeField] TextMeshPro _textSuccess;
         [SerializeField] TextMeshPro _status;
+        [SerializeField] TextMeshPro _BtText;
         [SerializeField] GameObject _ui;
 
         private Animator _animator;
@@ -39,9 +40,15 @@ namespace RE
             _textFail.text = failText;
             _textSuccess.text = successText;
             if (success)
-                _status.text = "Sucesso!";
+            {
+                _status.text = "Successful covenant!";
+                _BtText.text = "Next >";
+            }
             else
-                _status.text = "Falhou!";
+            {
+                _status.text = "Failure!";
+                _BtText.text = "Try again >";
+            }
         }
 
         public void ChangeScene()

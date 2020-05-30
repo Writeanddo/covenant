@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d0498ddd3660d44a20dcd784b80d98, type: 3}
   m_Name: SS 9 Phenex
   m_EditorClassIdentifier: 
-  soulBodyType: 15
+  soulBodyType: 9
   soulBodyPlanet: 0
   soulName: Phenex
   soulPaperTypeFace: 9

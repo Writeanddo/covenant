@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BumState
   m_EditorClassIdentifier: Assembly-CSharp:RE:NPCState
   id: Bum
-  npcStatus: 2
+  npcStatus: 0
   tutorialLevelIndex: 1
   greetingAnimation: 0
