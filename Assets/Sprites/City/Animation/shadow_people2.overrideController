@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: shadow_people2
+  m_Controller: {fileID: 9100000, guid: 06c677392b04ffa43ae68cd079544151, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -7634617122348270875, guid: 745e1236fd9da5c48ab5453343f617e7,
+      type: 3}
+    m_OverrideClip: {fileID: 3943054651420503605, guid: 745e1236fd9da5c48ab5453343f617e7,
+      type: 3}
