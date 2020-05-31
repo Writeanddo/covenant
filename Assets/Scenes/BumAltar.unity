@@ -2974,10 +2974,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1597797081, guid: af9cbcd9de43a4e4da954b7c8dacd23b, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7162668703900222531, guid: af9cbcd9de43a4e4da954b7c8dacd23b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3058,16 +3054,6 @@ PrefabInstance:
       propertyPath: _demon
       value: 
       objectReference: {fileID: 1416736328}
-    - target: {fileID: 7162668703900222532, guid: af9cbcd9de43a4e4da954b7c8dacd23b,
-        type: 3}
-      propertyPath: _successNumber
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7162668703900222532, guid: af9cbcd9de43a4e4da954b7c8dacd23b,
-        type: 3}
-      propertyPath: _mainBgSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 40946ccd40431f942a714509be771007, type: 3}
     - target: {fileID: 7162668703900222533, guid: af9cbcd9de43a4e4da954b7c8dacd23b,
         type: 3}
       propertyPath: m_Name

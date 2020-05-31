@@ -49,7 +49,7 @@ MonoBehaviour:
   _hasStatus: 1
   _successTextStatus: {fileID: 0}
   _failTextStatus: {fileID: 0}
-  _successNumber: 2
+  _successNumber: 12
   _failNumber: 2
   _successText: {fileID: 0}
   _failText: {fileID: 0}
@@ -58,6 +58,7 @@ MonoBehaviour:
   _sceneTransition: {fileID: 7162668705050244131}
   _altarCanvasPrefab: {fileID: 203157543600467188, guid: c98efea0d2b4fd24bb77b352916c18f7,
     type: 3}
+  _mainBgSound: {fileID: 8300000, guid: 40946ccd40431f942a714509be771007, type: 3}
   _errorSound: {fileID: 8300000, guid: 07ef33e061ed6484996c17045e008845, type: 3}
   _transitionOpenSound: {fileID: 8300000, guid: eb06b690bc418b24daddb6181d0596aa,
     type: 3}
@@ -78,7 +79,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.613
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
