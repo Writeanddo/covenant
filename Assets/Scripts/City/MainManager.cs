@@ -13,6 +13,7 @@ namespace RE
 
         private void Awake()
         {
+            Debug.Log("entrou");
             MainManager[] mainManagers = FindObjectsOfType<MainManager>();
 
             if (mainManagers.Length > 1)

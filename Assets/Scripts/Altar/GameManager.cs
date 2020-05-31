@@ -26,6 +26,7 @@ namespace RE
         [SerializeField] Demon _demon;
         [SerializeField] Animator _sceneTransition;
         [SerializeField] GameObject _altarCanvasPrefab;
+        [SerializeField] AudioClip _mainBgSound;
         [SerializeField] AudioClip _errorSound;
         [SerializeField] AudioClip _transitionOpenSound;
         [SerializeField] AudioClip _transitionCloseSound;
@@ -47,6 +48,8 @@ namespace RE
 
         private void Start()
         {
+            _audioSource.clip = _mainBgSound;
+            _audioSource.Play();
             Cursor.SetCursor(_arrow, Vector2.zero, CursorMode.ForceSoftware);
             if (_hasStatus)
             {

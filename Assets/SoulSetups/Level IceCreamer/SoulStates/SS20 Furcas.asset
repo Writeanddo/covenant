@@ -16,7 +16,7 @@ MonoBehaviour:
   soulBodyPlanet: 0
   soulName: Furcas
   soulPaperTypeFace: 5
-  soulPaperElement: 0
+  soulPaperElement: 1
   soulPaperPlanet: 0
   soulTitle: 2
   hasSeal: 0

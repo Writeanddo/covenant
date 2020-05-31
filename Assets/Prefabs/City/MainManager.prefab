@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _npcStates:
-  - {fileID: 11400000, guid: 4599e53af630e9647ab036a396fb1441, type: 2}
+  - {fileID: 11400000, guid: 62dbc6de824a79a40b8f6c38128ef342, type: 2}
   - {fileID: 11400000, guid: 55b3842ac88d6d94a8e8dd017e01913a, type: 2}
   - {fileID: 11400000, guid: 11408185b67c79048bb20ce48afaca52, type: 2}
   - {fileID: 11400000, guid: 521206196715eba4b91ac6d7237a826d, type: 2}

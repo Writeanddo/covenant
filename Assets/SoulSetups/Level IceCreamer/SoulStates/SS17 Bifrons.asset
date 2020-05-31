@@ -16,7 +16,7 @@ MonoBehaviour:
   soulBodyPlanet: 5
   soulName: Bifrons
   soulPaperTypeFace: 10
-  soulPaperElement: 0
+  soulPaperElement: 1
   soulPaperPlanet: 5
   soulTitle: 0
   hasSeal: 0
