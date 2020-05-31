@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulBodyType: 1
   soulBodyPlanet: 1
-  soulName: 
+  soulName: Camio
   soulPaperTypeFace: 1
   soulPaperElement: 2
   soulPaperPlanet: 1

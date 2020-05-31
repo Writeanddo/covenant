@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulBodyType: 4
   soulBodyPlanet: 4
-  soulName: 
+  soulName: Botis
   soulPaperTypeFace: 13
   soulPaperElement: 3
   soulPaperPlanet: 4
