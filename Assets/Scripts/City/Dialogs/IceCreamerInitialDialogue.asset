@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IceCreamerInitialDialogue
   m_EditorClassIdentifier: 
   _dialogues:
-  - phrase: Good Night Fella! Wanna taste my delicious ice cream?
+  - phrase: Good night fella! Wanna taste my delicious ice cream?
     dialogPrefab: {fileID: 7511109105498480826, guid: ed9b3ca269e968d4299f81ce3ed9587e,
       type: 3}
   - phrase: Seems like you have few flavors available...
